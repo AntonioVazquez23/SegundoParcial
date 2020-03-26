@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Producción de manzana</title>
+</head>
+<body>
+<form method="post" name="sumar"> 
+	<h1>Producción de manzana</h1>
+	<div align="center"><img src="M.jpg" width="550px" height="400px"></div>
+    
+    <div>
+    <label for="ptotal">Producción Total</label>
+	<input type="number" id="ptotal" name="producT" min="250" max="1000000">
+	<td><input type="button" name="NuMaTo" id="b" value="Número de manzanas totales" onclick="sumarPT()" />          
+	</td>
+	</div>
+
+    <div>
+	<label for="pactual">Producción Actual</label>
+	<input type="number" id="pactual" name="producA" min="0" max="1000000">
+	<td><input type="button" name="NuMaAc" id="d" value="Número de manzanas actuales" onclick="sumarPA()" />          
+	</td>
+	</div>
+
+    <div>
+	<td><input type="button" name="hola1" id="10" value="+10" onclick="sumarPA1()" />          
+	</td>
+	<td><input type="button" name="hola2" id="15" value="+15" onclick="sumarPA2()" />          
+	</td>
+	<td><input type="button" name="hola3" id="30" value="+30" onclick="sumarPA3()" />          
+	</td>
+	<td><input type="button" name="hola4" id="50" value="+50" onclick="sumarPA4()" />          
+	</td>
+    </div>
+
+    <div>
+    <label for="porcentaje">Porcentaje:</label>
+	<td><input type="text" id="porcentaje" name="c" value="0"></td>
+    </div>
+
+    <div>
+    <td><input type="button" name="calcular" id="calcular" value="Calcular" onclick="Porcentaje()" />          
+	</td>
+    </div>
+
+  </form>
+
+    <script type="text/javascript">
+		function sumarPA1(){
+			caja = document.forms["sumar"].elements;
+			var n1 = Number(caja["producA"].value);
+			var n2 = Number(caja["hola1"].value);
+            resultado = n1 + n2;
+			if(!isNaN(resultado)){
+            caja["producA"].value = n1 + n2;
+             }
+             }
+        function sumarPA2(){
+			caja = document.forms["sumar"].elements;
+			var n1 = Number(caja["producA"].value);
+			var n2 = Number(caja["hola2"].value);
+            resultado = n1 + n2;
+			if(!isNaN(resultado)){
+            caja["producA"].value = n1 + n2;
+             }
+             }
+        function sumarPA3(){
+			caja = document.forms["sumar"].elements;
+			var n1 = Number(caja["producA"].value);
+			var n2 = Number(caja["hola3"].value);
+            resultado = n1 + n2;
+			if(!isNaN(resultado)){
+            caja["producA"].value = n1 + n2;
+             }
+             }
+        function sumarPA4(){
+			caja = document.forms["sumar"].elements;
+			var n1 = Number(caja["producA"].value);
+			var n2 = Number(caja["hola4"].value);
+            resultado = n1 + n2;
+			if(!isNaN(resultado)){
+            caja["producA"].value = n1 + n2;
+             }
+             }
+
+        function sumarPT(){
+			caja = document.forms["sumar"].elements;
+			var n2 = Number(caja["producA"].value);
+            resultado = (n2 * 45);
+			if(!isNaN(resultado)){
+            caja["producT"].value = (n2 * 45);
+             }
+             alert("El número de manzanas estimadas para la producción total es: " + resultado);
+             }
+        function sumarPA(){
+			caja = document.forms["sumar"].elements;
+			var n = Number(caja["producA"].value);
+             alert("El número de manzanas estimadas para la producción actual es: " + n);
+             }
+
+        function Porcentaje(){
+			caja = document.forms["sumar"].elements;
+			var n1 = Number(caja["producT"].value);
+			var n2 = Number(caja["producA"].value);
+            resultado = (n2 / n1) * 100;
+			if(!isNaN(resultado)){
+            caja["c"].value = (n2 / n1) * 100;
+             }
+         }
+         
+
+	</script>
+</body>
+</html> 
